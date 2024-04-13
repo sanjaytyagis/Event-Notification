@@ -16,6 +16,7 @@ node {
     println HUB_ORG
     println SFDC_HOST
     println CONNECTED_APP_CONSUMER_KEY
+    def SFDX_USE_GENERIC_UNIX_KEYCHAIN = true
     def toolbelt = tool 'toolbelt'
 
     stage('checkout source') {
