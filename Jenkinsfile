@@ -29,7 +29,7 @@ node {
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Deploye Code') {
             
-                rc = rc = command'${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}'
+                rc = command '${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}'
             
             if (rc != 0) { error 'hub org authorization failed' }
 
@@ -37,7 +37,7 @@ node {
 			
 			// need to pull out assigned username
 			
-				rc = rc = command'${toolbelt} force:mdapi:deploy -d manifest/. -u ${HUB_ORG}'
+				rc = command'${toolbelt} force:mdapi:deploy -d manifest/. -u ${HUB_ORG}'
 			
 			  
             printf rmsg
