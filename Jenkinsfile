@@ -37,7 +37,7 @@ node {
 			
 			// need to pull out assigned username
 			
-				rc = command'${toolbelt} force:mdapi:deploy -d manifest/. -u ${HUB_ORG}'
+				rc = command '${toolbelt} force:mdapi:deploy -d manifest/. -u ${HUB_ORG}'
 			
 			  
             printf rmsg
